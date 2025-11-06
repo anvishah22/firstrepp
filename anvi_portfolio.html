@@ -1,382 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anvi Shah — Portfolio & Survey</title>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anvi Shah — Portfolio & Survey</title>
+	<style>
+	:root{
+	  --bg:#fafafa;
+	  --text:#222;
+	  --muted:#666;
+	  --accent:#e6edf3;
+	  --radius:10px;
+	  --shadow:0 4px 12px rgba(0,0,0,0.05);
+	}
+	*{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",system-ui,sans-serif;}
+	body{
+	  background:var(--bg);
+	  color:var(--text);
+	  padding-bottom:40px;
+	  background-color:lightyellow;
+	}
+	header{
+	  max-width:900px;
+	  margin:24px auto;
+	  background:#fff;
+	  border-radius:var(--radius);
+	  padding:16px 24px;
+	  box-shadow:var(--shadow);
+	  display:flex;
+	  justify-content:space-between;
+	  align-items:center;
+	  flex-wrap:wrap;
+	}
+	header h1{font-size:22px;font-weight:700;}
+	nav a{
+	  text-decoration:none;
+	  color:var(--text);
+	  margin-left:14px;
+	  font-weight:600;
+	}
+	nav a:hover{color:#005f73;}
+	main{
+	  max-width:900px;
+	  margin:20px auto;
+	  padding:0 16px;
+	}
+	.card{
+	  background:#fff;
+	  border-radius:var(--radius);
+	  padding:20px;
+	  margin-bottom:18px;
+	  box-shadow:var(--shadow);
+	}
+	h2{margin-bottom:10px;font-size:20px;}
+	p{color:var(--muted);line-height:1.6;margin-bottom:10px;}
+	ul{list-style:none;padding-left:0;}
+	ul li{
+	  background:var(--accent);
+	  display:inline-block;
+	  padding:6px 12px;
+	  border-radius:8px;
+	  margin:4px;
+	  color:#222;
+	  font-weight:500;
+	}
+	label{
+	  display:block;
+	  font-weight:600;
+	  margin-top:10px;
+	  font-size:14px;
+	}
+	input,select,textarea{
+	  width:100%;
+	  padding:10px;
+	  border:1px solid #ddd;
+	  border-radius:8px;
+	  margin-top:4px;
+	  margin-bottom:8px;
+	  font-size:14px;
+	}
+	.inline label{display:inline-block;margin-right:10px;}
+	.btn{
+	  background:#eceff1;
+	  border:none;
+	  border-radius:8px;
+	  padding:10px 16px;
+	  font-weight:600;
+	  cursor:pointer;
+	  margin-top:10px;
+	}
+	.btn:hover{background:#dfe4e6;}
+	footer{
+	  text-align:center;
+	  margin-top:20px;
+	  color:var(--muted);
+	  font-size:14px;
+	}
+	@media(max-width:700px){
+	  header{flex-direction:column;align-items:flex-start;}
+	  nav a{margin:6px 8px 0 0;}
+	}
+	</style>
+	</head>
+	<body>
 
-  <style>
-    :root{
-      --bg-1: #fffaf6;
-      --accent-1: #ffd6c2;
-      --accent-2: #e7d7ff;
-      --accent-3: #d8f3ff;
-      --text: #243b4a;
-      --muted: #556577;
-      --card-shadow: 0 8px 24px rgba(36,59,74,0.08);
-      --radius: 14px;
-    }
+	<header>
+	  <h1>Anvi Shah</h1>
+	  <nav>
+		<a href="#about">About</a>
+		<a href="#edu">Education</a>
+		<a href="#projects">Projects</a>
+		<a href="#survey">Survey</a>
+		<a href="#contact">Contact</a>
+	  </nav>
+	</header>
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: linear-gradient(120deg,var(--bg-1), #fbf6ff 40%, #f0fff9 100%);
-      color:var(--text);
-      padding-bottom:60px;
-    }
+	<main>
+	  <section class="card" id="about">
+		<h2>About Me</h2>
+		<p>Hello, I'm <strong>Anvi Shah</strong>, a B.Tech student specializing in 
+		<strong>Artificial Intelligence & Data Science</strong> at JG University.</p>
+		<p>I completed my Diploma at LJ University with an SPI of 8.0. 
+		I enjoy building simple web projects.</p>
+		<p><strong>Internship:</strong> Completed a 3-month internship at Magnus Minds, 
+		gaining exposure to collaborative projects and technical workflow.</p>
+	  </section>
 
-    /* Header */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:18px 24px;
-      max-width:1100px;
-      margin:18px auto;
-      border-radius:20px;
-      background: linear-gradient(90deg, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
-      box-shadow: var(--card-shadow);
-      color: #102a36;
-    }
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:56px;
-      height:56px;
-      border-radius:12px;
-      background:linear-gradient(135deg,#fff,#ffe7d9);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:#7a4b2a;
-      box-shadow:0 6px 14px rgba(122,75,42,0.12);
-    }
-    header nav a{
-      text-decoration:none;
-      color:var(--text);
-      margin-left:14px;
-      font-weight:600;
-      padding:8px 10px;
-      border-radius:10px;
-    }
-    header nav a:hover{
-      background: rgba(255,255,255,0.4);
-    }
+	  <section class="card" id="edu">
+		<h2>Education & Experience</h2>
+		<p><strong>Diploma — LJ University:</strong> Graduated with 8.0 SPI; focused on programming fundamentals and practical labs.</p>
+		<p><strong>B.Tech — JG University:</strong> Currently pursuing AI & DS, learning ML concepts, Python, and web development.</p>
+		<p><strong>Internship — Magnus Minds:</strong> Applied classroom learning in real-world environments, improving teamwork and project skills.</p>
+	  </section>
 
-    /* Layout */
-    .container{
-      max-width:1100px;
-      margin:22px auto;
-      padding:0 18px;
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:22px;
-      align-items:start;
-    }
+	  <section class="card" id="projects">
+		<h2>Projects</h2>
+		<ul>
+		  <li>Portfolio Website</li>
+		  <li>Simple Calculator</li>
+		  <li>Mini Web App</li>
+		</ul>
+	  </section>
 
-    /* Profile card */
-    .profile{
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-      padding:18px;
-      border-radius:var(--radius);
-      box-shadow:var(--card-shadow);
-    }
-    .name{
-      font-size:20px;
-      font-weight:700;
-      margin-bottom:6px;
-    }
-    .meta{ color:var(--muted); font-size:14px; margin-bottom:12px;}
-    .tag{
-      display:inline-block;
-      margin-right:6px;
-      margin-bottom:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:linear-gradient(90deg,#fff,#f6fbff);
-      font-weight:600;
-      font-size:13px;
-      color:#2f4b5a;
-      box-shadow:0 6px 14px rgba(47,75,90,0.04);
-    }
+	  <section class="card" id="survey">
+		<h2>Survey</h2>
+		<p>I'd love to hear your feedback — please fill out this short survey.</p>
+		<form id="form" onsubmit="handleSubmit(event)">
+		  <label for="name">Full Name</label>
+		  <input id="name" name="name" type="text" placeholder="Your full name" required>
 
-    /* Main content */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--card-shadow);
-      margin-bottom:18px;
-    }
-    h2{ margin-top:0; color:#19303a; }
+		  <label for="age">Age</label>
+		  <input id="age" name="age" type="number" min="13" max="80" placeholder="Age">
 
-    .intro p{
-      line-height:1.6;
-      color:var(--muted);
-      font-size:15px;
-    }
+		  <label>Gender</label>
+		  <div class="inline">
+			<label><input type="radio" name="gender" value="Male"> Male</label>
+			<label><input type="radio" name="gender" value="Female"> Female</label>
+			<label><input type="radio" name="gender" value="Other"> Other</label>
+		  </div>
 
-    /* Grids */
-    .grid-2{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .small{
-      flex:1;
-      min-width:220px;
-      padding:12px;
-      border-radius:12px;
-      background:linear-gradient(90deg, rgba(255,255,255,0.8), rgba(250,250,255,0.6));
-      box-shadow: 0 6px 14px rgba(20,40,60,0.03);
-    }
-    .small h4{ margin:0 0 8px 0; font-size:15px;}
-    .small p{ margin:0; color:var(--muted); font-size:14px; line-height:1.5;}
+		  <label for="role">You are a</label>
+		  <select id="role" name="role" required>
+			<option value="">-- Select --</option>
+			<option>Student</option>
+			<option>Developer</option>
+		  </select>
 
-    /* Projects */
-    ul.projects{ padding-left:16px; margin:0; color:var(--muted); }
-    ul.projects li{ margin:8px 0; font-weight:600; color:#16323a; background: linear-gradient(90deg,#fff,#fcfcff); padding:8px 12px; border-radius:10px; display:inline-block; margin-right:8px; }
+		  <label for="country">Country</label>
+		  <select id="country" name="country">
+			<option value="">-- Choose --</option>
+			<option>India</option><option>USA</option>
+			<option>UK</option><option>Canada</option>
+			<option>Australia</option><option>Other</option>
+		  </select>
 
-    /* Form */
-    form{ max-width:760px; margin-top:6px; }
-    label{ display:block; font-weight:600; margin-bottom:6px; color:#1e3b44; font-size:14px}
-    input[type="text"], input[type="number"], input[type="email"], select, textarea {
-      width:100%;
-      padding:10px 12px;
-      border-radius:10px;
-      border:1px solid #e0e7ea;
-      background:#fff;
-      font-size:14px;
-      outline:none;
-      box-shadow:0 6px 18px rgba(16,48,58,0.02);
-    }
-    .row{ display:flex; gap:12px; }
-    .row .col{ flex:1; }
-    .inline-group{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-    .inline-group input[type="radio"], .inline-group input[type="checkbox"]{ transform:scale(1.05); margin-right:8px; }
-    .btn{
-      display:inline-block;
-      padding:12px 18px;
-      background: linear-gradient(90deg,#ffd6c2,#e7d7ff);
-      border:none;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:700;
-      color:#2b3740;
-      margin-top:10px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.06);
-    }
+		  <label>Hobbies</label>
+		  <div class="inline">
+			<label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+			<label><input type="checkbox" name="hobby" value="Music"> Music</label>
+			<label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+			<label><input type="checkbox" name="hobby" value="Gaming"> Gaming</label>
+		  </div>
 
-    /* Footer */
-    footer{
-      max-width:1100px;
-      margin:28px auto;
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-    }
+		  <label for="suggest">Suggestions</label>
+		  <textarea id="suggest" name="suggest" rows="3" placeholder="Your feedback..."></textarea>
 
-    @media (max-width:980px){
-      .container{ grid-template-columns: 1fr; padding:0 14px; }
-      header{ flex-direction:column; gap:12px; align-items:flex-start; padding:16px; }
-    }
-  </style>
-</head>
-<body>
+		  <button class="btn" type="submit">Submit</button>
+		</form>
+	  </section>
 
-  <header>
-    <div class="brand">
-      <div class="logo">A</div>
-      <div>
-        <div style="font-weight:800; font-size:18px;">Anvi Shah</div>
-        <div style="font-size:12px; color:#18323b; opacity:0.8;">B.Tech | AI & DS • Web Dev Learner</div>
-      </div>
-    </div>
+	  <section class="card" id="contact">
+		<h2>Contact</h2>
+		<p><strong>Email:</strong> anvishah117@gmail.com</p>
+	  </section>
+	</main>
 
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#survey">Survey</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main class="container" role="main">
-
-    <!-- Profile -->
-    <aside class="profile" aria-label="Profile">
-      <div class="name">Anvi Shah</div>
-      <div class="meta">B.Tech (AI & DS) — JG University</div>
-
-      <div style="margin:10px 0;">
-        <span class="tag">Diploma — LJ University</span>
-        <span class="tag">8.0 SPI</span>
-      </div>
-
-      <div style="margin-top:12px;">
-        <h4 style="margin:0 0 8px 0;">Quick Links</h4>
-        <div>
-          <a class="tag" href="#projects">Projects</a>
-          <a class="tag" href="#survey">Survey</a>
-        </div>
-      </div>
-
-      <div style="margin-top:14px;">
-        <h4 style="margin:0 0 6px 0;">Contact</h4>
-        <div style="color:var(--muted); font-size:14px;">anvishah117@gmail.com</div>
-      </div>
-    </aside>
-
-    <!-- Right column -->
-    <section aria-label="Main content">
-
-      <!-- About -->
-      <article class="card intro" id="about">
-        <h2>About Me</h2>
-        <p>
-          Hello — I'm <strong>Anvi Shah</strong>, a B.Tech student currently pursuing <strong>AI & DS</strong> at <strong>JG University</strong>.
-          I completed a diploma from <strong>LJ University</strong> with a strong academic record (8.0 SPI). I enjoy building small web projects,
-          solving problems, and learning new tools in data science and development.
-        </p>
-        <p style="margin-top:12px;">
-          <strong>Internship:</strong> Completed a 3-month internship at <strong>Magnus Minds</strong>, where I gained hands-on exposure to industry workflows,
-          practiced practical skills, and learned to collaborate with a small team on real tasks.
-        </p>
-      </article>
-
-      <!-- Education -->
-      <article class="card" id="education" style="margin-top:14px;">
-        <h2>Education & Experience</h2>
-
-        <div class="grid-2" style="margin-top:12px;">
-          <div class="small">
-            <h4>Diploma — LJ University</h4>
-            <p>Secured <strong>8.0 SPI</strong>. Focused on core engineering subjects, basic programming and practical labs.</p>
-          </div>
-          <div class="small">
-            <h4>B.Tech — JG University</h4>
-            <p>Currently enrolled in <strong>Artificial Intelligence & Data Science (AI & DS)</strong>. Learning machine learning fundamentals, data pipelines, and web interfaces.</p>
-          </div>
-        </div>
-
-        <div class="grid-2" style="margin-top:12px;">
-          <div class="small">
-            <h4>Internship — Magnus Minds</h4>
-            <p>3 months internship for practical exposure; worked on small tasks, improved technical confidence and communication in team settings.</p>
-          </div>
-          <div class="small">
-            <h4>Tools & Interests</h4>
-            <p>HTML, CSS, JavaScript basics, C, Python, intro to ML libraries, data visualization, and web development.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Projects -->
-      <article class="card" id="projects" style="margin-top:14px;">
-        <h2>Projects & Portfolio</h2>
-        <p style="color:var(--muted); margin-top:6px;">Some projects I made while learning — small, practical, and improving each week.</p>
-
-        <div style="margin-top:12px;">
-          <ul class="projects">
-            <li>Portfolio Website</li>
-            <li>Student Management System</li>
-            <li>Simple Calculator</li>
-            <li>Mini Data Visualization (Python)</li>
-            <li>Basic Web App (Practice)</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Survey -->
-      <article class="card" id="survey" style="margin-top:14px;">
-        <h2>Survey Form</h2>
-        <p style="color:var(--muted); margin-bottom:8px;">Please fill this quick form — your responses help me improve my site and portfolio.</p>
-
-        <form id="surveyForm" onsubmit="handleSubmit(event)" novalidate>
-          <div class="row">
-            <div class="col">
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" required placeholder="Your full name" />
-            </div>
-            <div class="col">
-              <label for="age">Age</label>
-              <input id="age" name="age" type="number" min="13" max="80" required placeholder="Age" />
-            </div>
-          </div>
-
-          <label>Gender</label>
-          <div class="inline-group">
-            <label><input type="radio" name="gender" value="Male" required /> Male</label>
-            <label><input type="radio" name="gender" value="Female" /> Female</label>
-            <label><input type="radio" name="gender" value="Other" /> Other</label>
-          </div>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
-
-          <label for="role">You are a</label>
-          <select id="role" name="role" required>
-            <option value="">-- Select --</option>
-            <option value="Student">Student</option>
-            <option value="Developer">Developer</option>
-          </select>
-
-          <label for="country">Country</label>
-          <select id="country" name="country" required>
-            <option value="">-- Choose country --</option>
-            <option>India</option>
-            <option>Australia</option>
-            <option>Other</option>
-          </select>
-		 <label>Hobbies</label>
-          <div class="inline-group">
-            <label><input type="checkbox" name="hobby" value="Reading" /> Reading</label>
-            <label><input type="checkbox" name="hobby" value="Music" /> Music</label>
-            <label><input type="checkbox" name="hobby" value="Sports" /> Sports</label>
-            <label><input type="checkbox" name="hobby" value="Gaming" /> Gaming</label>
-            <label><input type="checkbox" name="hobby" value="Traveling" /> Traveling</label>
-          </div>
-
-          <label for="suggestions">Suggestions</label>
-          <textarea id="suggestions" name="suggestions" rows="4" placeholder="Any feedback or suggestions..."></textarea>
-
-          <button class="btn" type="submit">Submit Survey</button>
-        </form>
-      </article>
-
-      <!-- Contact -->
-      <article class="card" id="contact" style="margin-top:14px;">
-        <h2>Contact</h2>
-          <strong>Email:</strong> anvishah117@gmail.com
-        </div>
-      </article>
-
-    </section>
-  </main>
-
-  <script>
-    function handleSubmit(e){
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const name = data.get('name') || 'Friend';
-      const role = data.get('role') || 'Visitor';
-      const country = data.get('country') || 'your country';
-      const hobbies = [];
-      for (const [k, v] of data.entries()) {
-        if (k === 'hobby') hobbies.push(v);
-      }
-      const msg = `Thanks, ${name}! 🎉\nWe received your submission.\nRole: ${role}\nCountry: ${country}\nHobbies: ${hobbies.join(', ') || 'None'}`;
-      alert(msg);
-      form.reset();
-    }
-  </script>
-</body>
-</html>
+	</body>
+	</html>
