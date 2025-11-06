@@ -332,12 +332,51 @@
           <select id="country" name="country" required>
             <option value="">-- Choose country --</option>
             <option>India</option>
-            <option>USA</option>
-            <option>UK</option>
-            <option>Canada</option>
             <option>Australia</option>
             <option>Other</option>
           </select>
+		 <label>Hobbies</label>
+          <div class="inline-group">
+            <label><input type="checkbox" name="hobby" value="Reading" /> Reading</label>
+            <label><input type="checkbox" name="hobby" value="Music" /> Music</label>
+            <label><input type="checkbox" name="hobby" value="Sports" /> Sports</label>
+            <label><input type="checkbox" name="hobby" value="Gaming" /> Gaming</label>
+            <label><input type="checkbox" name="hobby" value="Traveling" /> Traveling</label>
+          </div>
 
-          <label>Hobbies</label>
-          <div
+          <label for="suggestions">Suggestions</label>
+          <textarea id="suggestions" name="suggestions" rows="4" placeholder="Any feedback or suggestions..."></textarea>
+
+          <button class="btn" type="submit">Submit Survey</button>
+        </form>
+      </article>
+
+      <!-- Contact -->
+      <article class="card" id="contact" style="margin-top:14px;">
+        <h2>Contact</h2>
+          <strong>Email:</strong> anvishah117@gmail.com
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const name = data.get('name') || 'Friend';
+      const role = data.get('role') || 'Visitor';
+      const country = data.get('country') || 'your country';
+      const hobbies = [];
+      for (const [k, v] of data.entries()) {
+        if (k === 'hobby') hobbies.push(v);
+      }
+      const msg = `Thanks, ${name}! 🎉\nWe received your submission.\nRole: ${role}\nCountry: ${country}\nHobbies: ${hobbies.join(', ') || 'None'}`;
+      alert(msg);
+      form.reset();
+    }
+  </script>
+</body>
+</html>
